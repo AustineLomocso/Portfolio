@@ -24,16 +24,6 @@ const DownloadIcon = () => (
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleDownload = () => {
-    const url = "./assets/AustineLomocso_Resume.pdf";
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "Austine_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -61,7 +51,7 @@ function Header() {
             <GitHubIcon />
           </a>
           <a
-            href="https://linkedin.com/in/austine-lomocso"
+            href="https://www.linkedin.com/in/austine-lomocso-bb1448255/"
             target="_blank"
             rel="noreferrer"
             className="header-social-icon"
@@ -69,14 +59,15 @@ function Header() {
           >
             <LinkedInIcon />
           </a>
-          <button
+          <a
+            href="./assets/AustineLomocso_Resume.pdf"
+            download="Austine_Resume.pdf"
             className="header-social-icon header-download-btn"
-            onClick={handleDownload}
-            aria-label="Download Resume"
-            title="Download Resume"
+            aria-label="Download CV"
+            title="Download CV"
           >
             <DownloadIcon />
-          </button>
+          </a>
         </div>
 
         <button
@@ -109,7 +100,7 @@ function Header() {
             <GitHubIcon />
           </a>
           <a
-            href="https://linkedin.com/in/austine-lomocso"
+            href="https://www.linkedin.com/in/austine-lomocso-bb1448255"
             target="_blank"
             rel="noreferrer"
             className="mobile-social-icon"
@@ -120,8 +111,13 @@ function Header() {
           </a>
         </div>
 
-        <button className="mobile-cv-btn" onClick={() => { handleDownload(); closeMenu(); }}>
-          Download Resume
+        <button className="mobile-cv-btn" onClick={closeMenu}>
+          <a
+            href="./assets/AustineLomocso_Resume.pdf"
+            download="Austine_Resume.pdf"
+          >
+            Download CV
+          </a>
         </button>
       </div>
     </>
