@@ -8,6 +8,7 @@ import Projects from "./Projects.jsx";
 function App() {
   return (
     <>
+      <title>Deveros Portfolio</title>
       <Header />
       <div id="hero"><Hero /></div>
       <div className="section-divider" />
