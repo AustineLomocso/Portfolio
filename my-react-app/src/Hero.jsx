@@ -1,4 +1,4 @@
-import pic from "./assets/hero.png"
+import pic from "./assets/pic.png"
 export default function Hero(){
     return(
         <div className="hero">
