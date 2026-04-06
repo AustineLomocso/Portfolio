@@ -1,0 +1,312 @@
+:root {
+  /* Dark Red / Maroon & Gold Palette */
+  --maroon: #7b2c3a; 
+  --bg-color: #2b0f15; /* Deep, dark red background */
+  --surface-color: #4a1922; /* Slightly lighter red for cards/elements */
+  --gold: #d4af37; 
+  --gold-light: #f3d87d;
+  
+  /* Text Colors for Dark Background */
+  --text-main: #fcfbf9; /* Off-white for readability */
+  --text-muted: #e0d5d7; /* Muted text for descriptions */
+  
+  /* Spacing & Layout */
+  --section-padding: 6rem 10%;
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed) ease;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--gold); /* Changed to gold to contrast with dark red */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 1rem 5%;
+  position: sticky;    
+  top: 0;           
+  background-color: var(--maroon); 
+  color: var(--gold);
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow for dark mode */
+}
+
+header .headerName {
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--gold);
+  cursor: pointer;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+header ul li a:hover {
+  color: var(--text-main);
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;     
+  padding: var(--section-padding);
+  gap: 4rem;
+}
+
+.heroCard img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: 10px 10px 0px var(--gold);
+}
+
+.heroDesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+}
+
+.heroDesc h1 {
+  font-size: clamp(4rem, 8vw, 8rem);
+  margin: 0; 
+  line-height: 1; 
+  text-align: left;
+}
+
+.heroDesc p {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  color: var(--text-muted);
+  margin-top: 1rem; 
+  font-weight: 300;
+}
+
+/* ================= PROJECTS ================= */
+.projects {
+  min-height: 100vh;
+  padding: var(--section-padding);
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;    
+  justify-content: center;
+  gap: 3rem;         
+}
+
+.projCard {
+  text-align: left;
+  width: 320px;
+  background: var(--surface-color); /* Updated to surface color */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border-radius: var(--border-radius); 
+  overflow: hidden;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.projCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2); /* Gold tinted shadow */
+  border-color: var(--gold);
+}
+
+.projCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--gold);
+}
+
+.cardDesc {
+  padding: 1.5rem;
+}
+
+.projCard h2 {
+  margin: 0 0 10px 0;
+  color: var(--gold-light);
+  font-size: 1.25rem;
+}
+
+.projCard p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ================= SKILLS ================= */
+.skills {
+  min-height: 100vh;
+  padding: var(--section-padding);
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.categories button {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.categories button:hover, 
+.categories button:focus {
+  background: var(--gold);
+  color: var(--bg-color); /* Dark text on gold background when hovered */
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skill-list li {
+  list-style: none;
+  background: var(--surface-color);
+  color: var(--text-main);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-left: 4px solid var(--gold);
+  transition: transform 0.2s ease;
+}
+
+.skill-list li:hover {
+  transform: scale(1.05);
+}
+
+/* ================= CONTACT ================= */
+#contact {
+  min-height: 80vh;
+  padding: var(--section-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  gap: 1.5rem;
+  background: var(--surface-color);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+form label {
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: -0.5rem;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.2); /* Darkened inputs */
+  color: var(--text-main);
+  box-sizing: border-box;
+  transition: border-color var(--transition-speed) ease;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+form input[type="submit"] {
+  background-color: var(--gold);
+  color: var(--bg-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color var(--transition-speed) ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--gold-light);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 2rem;
+  background-color: #1a080c; /* Even darker red/black for the footer */
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 0.9rem;
+}

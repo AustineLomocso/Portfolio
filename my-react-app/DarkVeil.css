@@ -1,0 +1,9 @@
+.darkveil-canvas {
+  position: fixed; /* Keeps it in place even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;       /* Pushes it behind all other content */
+  pointer-events: none; /* Ensures you can still click buttons/links "through" it */
+}
