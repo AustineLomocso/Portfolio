@@ -105,6 +105,20 @@ header {
   z-index: 1000;
 }
 
+/* Nav is pulled out of flow and pinned to the true centre of the header */
+header nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Nav is lifted out of flex flow and pinned to the true center of the header */
+header nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .header-logo {
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
@@ -200,25 +214,18 @@ header nav ul li a:hover::after {
   border-color: var(--gold);
 }
 
-.header-cv-btn {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--bg-color);
-  background: var(--gold);
-  border: none;
-  padding: 0.55rem 1.4rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background var(--transition-speed) ease, transform 0.15s ease;
-  white-space: nowrap;
+/* Download icon button — gold-bordered to distinguish from plain social icons */
+.header-download-btn {
+  border: 1.5px solid rgba(0, 0, 0, 0.6) !important;
+  color: var(--bg-color) !important;
+  border-radius: 8px !important;
+  padding: 0.4rem !important;
 }
 
-.header-cv-btn:hover {
-  background: var(--gold-light);
-  transform: translateY(-1px);
+.header-download-btn:hover {
+  background: var(--gold) !important;
+  color: var(--bg-color) !important;
+  border-color: var(--gold) !important;
 }
 
 /* Hamburger */
