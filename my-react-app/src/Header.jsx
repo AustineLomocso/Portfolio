@@ -60,7 +60,7 @@ function Header() {
             <LinkedInIcon />
           </a>
           <a
-            href="./assets/AustineLomocso_Resume.pdf"
+            href="/AustineLomocso_Resume.pdf"
             download="Austine_Resume.pdf"
             className="header-social-icon header-download-btn"
             aria-label="Download CV"
@@ -113,7 +113,7 @@ function Header() {
 
         <button className="mobile-cv-btn" onClick={closeMenu}>
           <a
-            href="./assets/AustineLomocso_Resume.pdf"
+            href="/AustineLomocso_Resume.pdf"
             download="Austine_Resume.pdf"
           >
             Download CV
