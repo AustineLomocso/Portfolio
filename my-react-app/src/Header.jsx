@@ -28,7 +28,7 @@ function Header() {
     const url = "./assets/AustineLomocso_Resume.pdf";
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Austine_Resume";
+    link.download = "Austine_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
