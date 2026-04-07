@@ -13,13 +13,22 @@ const LinkedInIcon = () => (
 );
 
 const DownloadIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
     stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
     <polyline points="7 10 12 15 17 10"/>
     <line x1="12" y1="15" x2="12" y2="3"/>
   </svg>
 );
+
+const navLinks = [
+  { href: "#hero",            label: "Home" },
+  { href: "#experience",      label: "Experience" },
+  { href: "#projects",        label: "Projects" },
+  { href: "#skills",          label: "Skills" },
+  { href: "#accomplishments", label: "Awards" },
+  { href: "#contact",         label: "Contact" },
+];
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,12 +41,9 @@ function Header() {
 
         <nav>
           <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#accomplishments">Awards</a></li>
-            <li><a href="#contact">Contact</a></li>
+            {navLinks.map(({ href, label }) => (
+              <li key={href}><a href={href}>{label}</a></li>
+            ))}
           </ul>
         </nav>
 
@@ -52,31 +58,75 @@ function Header() {
           </a>
         </div>
 
-        <button className={`hamburger ${menuOpen ? "open" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+        <button
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+        >
           <span></span><span></span><span></span>
         </button>
       </header>
 
-      <div className={`mobile-nav ${menuOpen ? "open" : ""}`}>
-        <a href="#hero"           onClick={closeMenu}>Home</a>
-        <a href="#experience"     onClick={closeMenu}>Experience</a>
-        <a href="#projects"       onClick={closeMenu}>Projects</a>
-        <a href="#skills"         onClick={closeMenu}>Skills</a>
-        <a href="#accomplishments" onClick={closeMenu}>Awards</a>
-        <a href="#contact"        onClick={closeMenu}>Contact</a>
+      {/* Backdrop */}
+      <div
+        className={`mobile-nav-backdrop ${menuOpen ? "open" : ""}`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
 
-        <div className="mobile-social-row">
-          <a href="https://github.com/AustineLomocso" target="_blank" rel="noreferrer"
-            className="mobile-social-icon" aria-label="GitHub" onClick={closeMenu}><GitHubIcon /></a>
-          <a href="https://www.linkedin.com/in/austine-lomocso-bb1448255" target="_blank" rel="noreferrer"
-            className="mobile-social-icon" aria-label="LinkedIn" onClick={closeMenu}><LinkedInIcon /></a>
+      {/* Drawer */}
+      <nav className={`mobile-nav ${menuOpen ? "open" : ""}`} aria-label="Mobile navigation">
+
+        {/* Drawer header */}
+        <div className="mobile-nav-top">
+          <span className="mobile-nav-logo">DEVEROS</span>
+          <button className="mobile-nav-close" onClick={closeMenu} aria-label="Close menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
         </div>
 
-        <button className="mobile-cv-btn" onClick={closeMenu}>
-          <a href="/AustineLomocso_Resume.pdf" download="Austine_Resume.pdf">Download CV</a>
-        </button>
-      </div>
+        {/* Nav links */}
+        <ul className="mobile-nav-links">
+          {navLinks.map(({ href, label }, i) => (
+            <li key={href}>
+              <a href={href} onClick={closeMenu}>
+                <span className="mobile-nav-num">0{i + 1}</span>
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Footer row */}
+        <div className="mobile-nav-footer">
+          <div className="mobile-social-row">
+            <a href="https://github.com/AustineLomocso" target="_blank" rel="noreferrer"
+              className="mobile-social-icon" aria-label="GitHub" onClick={closeMenu}>
+              <GitHubIcon />
+            </a>
+            <a href="https://www.linkedin.com/in/austine-lomocso-bb1448255" target="_blank" rel="noreferrer"
+              className="mobile-social-icon" aria-label="LinkedIn" onClick={closeMenu}>
+              <LinkedInIcon />
+            </a>
+          </div>
+
+          <a
+            href="/AustineLomocso_Resume.pdf"
+            download="Austine_Resume.pdf"
+            className="mobile-cv-btn"
+            onClick={closeMenu}
+          >
+            <DownloadIcon />
+            Download CV
+          </a>
+        </div>
+
+      </nav>
     </>
   );
 }
