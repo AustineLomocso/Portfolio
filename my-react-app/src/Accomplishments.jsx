@@ -25,7 +25,7 @@ const awards = [
   {
     title: "MCIA CebIHacks",
     place: "second",
-    provider: "Mactan City International Airport",
+    provider: "Mactan Cebu International Airport",
     year: "2026",
     img: "CebIHacks.jpg",
     category: "Hackathon",
