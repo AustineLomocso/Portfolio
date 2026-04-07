@@ -23,7 +23,6 @@ const DownloadIcon = () => (
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -34,90 +33,48 @@ function Header() {
         <nav>
           <ul>
             <li><a href="#hero">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#accomplishments">Awards</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
 
         <div className="header-right">
-          <a
-            href="https://github.com/AustineLomocso"
-            target="_blank"
-            rel="noreferrer"
-            className="header-social-icon"
-            aria-label="GitHub"
-          >
-            <GitHubIcon />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/austine-lomocso-bb1448255/"
-            target="_blank"
-            rel="noreferrer"
-            className="header-social-icon"
-            aria-label="LinkedIn"
-          >
-            <LinkedInIcon />
-          </a>
-          <a
-            href="/AustineLomocso_Resume.pdf"
-            download="Austine_Resume.pdf"
-            className="header-social-icon header-download-btn"
-            aria-label="Download CV"
-            title="Download CV"
-          >
+          <a href="https://github.com/AustineLomocso" target="_blank" rel="noreferrer"
+            className="header-social-icon" aria-label="GitHub"><GitHubIcon /></a>
+          <a href="https://www.linkedin.com/in/austine-lomocso-bb1448255/" target="_blank" rel="noreferrer"
+            className="header-social-icon" aria-label="LinkedIn"><LinkedInIcon /></a>
+          <a href="/AustineLomocso_Resume.pdf" download="Austine_Resume.pdf"
+            className="header-social-icon header-download-btn" aria-label="Download CV" title="Download CV">
             <DownloadIcon />
           </a>
         </div>
 
-        <button
-          className={`hamburger ${menuOpen ? "open" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+        <button className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <span></span><span></span><span></span>
         </button>
       </header>
 
-      {/* Mobile nav overlay */}
       <div className={`mobile-nav ${menuOpen ? "open" : ""}`}>
-        <a href="#hero"     onClick={closeMenu}>Home</a>
-        <a href="#projects" onClick={closeMenu}>Projects</a>
-        <a href="#skills"   onClick={closeMenu}>Skills</a>
-        <a href="#contact"  onClick={closeMenu}>Contact</a>
+        <a href="#hero"           onClick={closeMenu}>Home</a>
+        <a href="#experience"     onClick={closeMenu}>Experience</a>
+        <a href="#projects"       onClick={closeMenu}>Projects</a>
+        <a href="#skills"         onClick={closeMenu}>Skills</a>
+        <a href="#accomplishments" onClick={closeMenu}>Awards</a>
+        <a href="#contact"        onClick={closeMenu}>Contact</a>
 
         <div className="mobile-social-row">
-          <a
-            href="https://github.com/AustineLomocso"
-            target="_blank"
-            rel="noreferrer"
-            className="mobile-social-icon"
-            aria-label="GitHub"
-            onClick={closeMenu}
-          >
-            <GitHubIcon />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/austine-lomocso-bb1448255"
-            target="_blank"
-            rel="noreferrer"
-            className="mobile-social-icon"
-            aria-label="LinkedIn"
-            onClick={closeMenu}
-          >
-            <LinkedInIcon />
-          </a>
+          <a href="https://github.com/AustineLomocso" target="_blank" rel="noreferrer"
+            className="mobile-social-icon" aria-label="GitHub" onClick={closeMenu}><GitHubIcon /></a>
+          <a href="https://www.linkedin.com/in/austine-lomocso-bb1448255" target="_blank" rel="noreferrer"
+            className="mobile-social-icon" aria-label="LinkedIn" onClick={closeMenu}><LinkedInIcon /></a>
         </div>
 
         <button className="mobile-cv-btn" onClick={closeMenu}>
-          <a
-            href="/AustineLomocso_Resume.pdf"
-            download="Austine_Resume.pdf"
-          >
-            Download CV
-          </a>
+          <a href="/AustineLomocso_Resume.pdf" download="Austine_Resume.pdf">Download CV</a>
         </button>
       </div>
     </>

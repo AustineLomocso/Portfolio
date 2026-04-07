@@ -8,10 +8,11 @@ export default function Hero() {
       </div>
       <div className="heroDesc">
         <h1>AUSTINE</h1>
+        <p className="hero-lastname">Lomocso</p>
         <p className="hero-tagline">Digital Solutions for Real Life Problems</p>
         <div className="hero-cta">
-          <a href="#projects" className="btn-primary">View Projects</a>
-          <a href="#contact"  className="btn-secondary">Get in Touch</a>
+          <a href="#projects"  className="btn-primary">View Projects</a>
+          <a href="#contact"   className="btn-secondary">Get in Touch</a>
         </div>
       </div>
     </div>
