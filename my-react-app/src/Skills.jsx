@@ -6,14 +6,23 @@ export default function Skills() {
     { name: "C++",         category: "Languages" },
     { name: "Java",        category: "Languages" },
     { name: "Python",      category: "Languages" },
+    { name: "SQL",      category: "Languages" },
+    { name: "Typescript",      category: "Languages" },
     { name: "React",       category: "Frameworks" },
     { name: "Spring Boot", category: "Frameworks" },
     { name: "Django",      category: "Frameworks" },
+    { name: "Tensorflow",      category: "Frameworks" },
+    { name: "LangChain",      category: "Frameworks" }, 
     { name: "Godot",       category: "Tools" },
+    { name: "Arduino",       category: "Tools" },
+    { name: "ESP-32",       category: "Tools" },
+    { name: "VS Code",       category: "Tools" },
     { name: "Firebase",    category: "Tools" },
     { name: "Git",         category: "Tools" },
     { name: "Figma",       category: "Tools" },
     { name: "Canva",       category: "Tools" },
+    { name: "MS Office",       category: "Tools" },
+    { name: "CapCut",       category: "Tools" },
   ];
 
   const [activeCategory, setActiveCategory] = useState("All");

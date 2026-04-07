@@ -1,40 +1,22 @@
+/* -------------------------------------------------------
+   Accomplishments.jsx
+   Replace the `img` src with your actual certificate /
+   award image paths.  Every card has a placeholder that
+   shows a dashed-border box with an "Add Image" label
+   when no src is provided.
+------------------------------------------------------- */
+
 const PLACEHOLDER = null; // swap to an import or URL when ready
 
 /* ── Icon components ── */
-const GoldMedalIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-    stroke="var(--gold)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="14" r="7"/>
-    <path d="M8.21 7.12 7 3H5l2.36 5.41"/>
-    <path d="M15.79 7.12 17 3h2l-2.36 5.41"/>
-    <path d="M12 11v3l1.5 1.5"/>
-  </svg>
-);
 
-const SilverMedalIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-    stroke="#b0bec5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="14" r="7"/>
-    <path d="M8.21 7.12 7 3H5l2.36 5.41"/>
-    <path d="M15.79 7.12 17 3h2l-2.36 5.41"/>
-    <path d="M10 17h4"/>
-    <path d="M10 14h2a2 2 0 0 0 0-4h-2v7"/>
-  </svg>
-);
-
+/* Plain checkmark — certified only */
 const CertifiedIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-    stroke="#6ee7b7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4l-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/>
-    <polyline points="9 12 11 14 15 10"/>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+    stroke="#6ee7b7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="4 13 9 18 20 7"/>
   </svg>
 );
-
-const placeIcon = {
-  champion:   <GoldMedalIcon />,
-  second:     <SilverMedalIcon />,
-  certified:  <CertifiedIcon />,
-};
 
 const placeLabel = {
   champion:  "Champion",
@@ -126,7 +108,7 @@ function AwardCard({ title, place, provider, year, img, category }) {
       {/* Text */}
       <div className="award-body">
         <p className="award-place">
-          {placeIcon[place]}
+          {place === "certified" && <CertifiedIcon />}
           <span>{placeLabel[place]}</span>
         </p>
         <h3 className="award-title">{title}</h3>
