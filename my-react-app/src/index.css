@@ -239,6 +239,16 @@ header nav ul li a:hover::after { width: 100%; }
   overflow: hidden;
 }
 
+.hero-summary {
+  margin-top: 1.4rem;
+  max-width: 480px;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-muted, #a0a0b0);
+  border-left: 2px solid var(--gold);
+  padding-left: 0.9rem;
+}
+
 .hero::before {
   content: '';
   position: absolute;

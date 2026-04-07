@@ -3,17 +3,6 @@ import cookingIna  from "./assets/cookinigna.png";
 import trashdash   from "./assets/trashdash.png";
 import ProjectCard from "./ProjectCard.jsx";
 
-/* -------------------------------------------------------
-   To add a new project with a placeholder image:
-     <ProjectCard
-       src={null}                      ← no image yet
-       name="My New Project"
-       description="What it does"
-       ref="https://github.com/..."
-     />
-   Or import your image and pass it as `src`.
-------------------------------------------------------- */
-
 export default function Projects() {
   return (
     <div className="projects">
@@ -40,16 +29,16 @@ export default function Projects() {
 
         {/* ── Placeholder cards – replace src & details when ready ── */}
         <ProjectCard
-          src={null}
+          src= "Pocketclass.png"
           name="PocketClass"
           description="Offline-first AI learning platform using LangChain & TypeScript."
-          ref="#"
+          ref="https://github.com/Bossdale/PocketClass"
         />
         <ProjectCard
-          src={null}
+          src="Medsync.png"
           name="MedSync"
           description="IoT medication adherence system with ESP-32 firmware & dual-protocol support."
-          ref="#"
+          ref="https://github.com/CodeJamjamzz/Automated_Pillbox"
         />
         {/* Add more placeholder cards here as needed */}
       </div>

@@ -1,16 +1,5 @@
-/* -------------------------------------------------------
-   Accomplishments.jsx
-   Replace the `img` src with your actual certificate /
-   award image paths.  Every card has a placeholder that
-   shows a dashed-border box with an "Add Image" label
-   when no src is provided.
-------------------------------------------------------- */
+const PLACEHOLDER = null; 
 
-const PLACEHOLDER = null; // swap to an import or URL when ready
-
-/* ── Icon components ── */
-
-/* Plain checkmark — certified only */
 const CertifiedIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
     stroke="#6ee7b7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -30,7 +19,7 @@ const awards = [
     place: "champion",
     provider: "Dept. of Science & Technology",
     year: "2025",
-    img: PLACEHOLDER,
+    img: "GameDev.jpg",
     category: "Competition",
   },
   {
@@ -38,7 +27,7 @@ const awards = [
     place: "second",
     provider: "Mandaue City IT Academy",
     year: "2026",
-    img: PLACEHOLDER,
+    img: "CebIHacks.jpg",
     category: "Hackathon",
   },
   {
@@ -46,7 +35,7 @@ const awards = [
     place: "second",
     provider: "iAcademy Philippines",
     year: "2026",
-    img: PLACEHOLDER,
+    img: "iAcademy.jpg",
     category: "Hackathon",
   },
   {
@@ -54,7 +43,7 @@ const awards = [
     place: "certified",
     provider: "Codechum",
     year: "2025",
-    img: PLACEHOLDER,
+    img: "Java.jpg",
     category: "Certificate",
   },
   {
@@ -62,7 +51,7 @@ const awards = [
     place: "certified",
     provider: "Codechum",
     year: "2024",
-    img: PLACEHOLDER,
+    img: "Cprog.png",
     category: "Certificate",
   },
   {
@@ -70,7 +59,15 @@ const awards = [
     place: "certified",
     provider: "Sololearn",
     year: "2025",
-    img: PLACEHOLDER,
+    img: "Sololearn.jpg",
+    category: "Certificate",
+  },
+  {
+    title: "Prompt Engineering",
+    place: "certified",
+    provider: "DataCamp",
+    year: "2025",
+    img: "PromptEngineering.jpg",
     category: "Certificate",
   },
 ];
