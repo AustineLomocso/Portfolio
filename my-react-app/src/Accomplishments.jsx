@@ -23,9 +23,9 @@ const awards = [
     category: "Competition",
   },
   {
-    title: "MCIA CebuHacks",
+    title: "MCIA CebIHacks",
     place: "second",
-    provider: "Mandaue City IT Academy",
+    provider: "Mactan City International Airport",
     year: "2026",
     img: "CebIHacks.jpg",
     category: "Hackathon",
